@@ -45,7 +45,7 @@ app.route("/api/notes")
         let newNote = req.body
 
         // this allows the test note to be the first note.
-        let highestID = 99;
+        let highestId = 99;
         // this will loop through the array and find the highest ID.
         for (let i = 0; i < database.length; i++) {
             let individualNote = database[i];
