@@ -24,7 +24,7 @@ app.get("/", function (req, res) {
 
 //notes html and it's corresponding url
 app.get("/notes", function (req, res) {
-    res.sendfile(path.join(__dirname, "/public/notes.html"));
+    res.sendFile(path.join(__dirname, "/public/notes.html"));
 })
 
 // --------------------------------------------------

@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "express": "^4.17.1",
+    "path": "^0.12.7",
     "y": "^0.3.2"
   },
   "devDependencies": {},
@@ -27,7 +28,7 @@
     "url": "https://github.com/dillon-smith-us/note-taker/issues"
   },
   "engines": {
-  "node": "14.17.0"
-},
+    "node": "14.17.0"
+  },
   "homepage": "https://github.com/dillon-smith-us/note-taker#readme"
 }
