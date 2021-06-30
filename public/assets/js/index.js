@@ -8,7 +8,7 @@ let $noteList = $(".list-container .list-group");
 let activeNote = {};
 
 // function gets notes from the db.
-let getNotes = () => {
+let getNotes = function() {
     return $.ajax({
         url: "/api/notes",
         method: "GET"
@@ -16,7 +16,7 @@ let getNotes = () => {
 };
 
 // a function for saving a note to db
-let saveNote = (note) => {
+let saveNote = function (note) {
     return $.ajax({
         url: "/api/notes",
         data: note,
@@ -25,7 +25,7 @@ let saveNote = (note) => {
 };
 
 // a function for deleting a note from db.
-let deleteNote = (id) => {
+let deleteNote = function (id) {
     return $.ajax({
         url: "api/notes/" + id,
         method: "DELETE"
@@ -33,7 +33,7 @@ let deleteNote = (id) => {
 };
 
 // if note is active, it will display, else render empty.
-let renderActiveNote = () => {
+let renderActiveNote = function () {
     $saveBtn.hide();
 
     if (activeNote.id) {
@@ -50,20 +50,20 @@ let renderActiveNote = () => {
 };
 
 // get note data from user inputs, and save to db, and update view.
-let handleNoteSave = () => {
+let handleNoteSave = function () {
     let newNote = {
         name: $noteName.val(),
         text: $noteText.val()
     };
 
-    saveNote(newNote).then((data) => {
+    saveNote(newNote).then(function (data) {
         getAndRenderNotes();
         renderActiveNote();
     });
 };
 
 // delete a note on click
-let handleNoteDelete = (event) => {
+let handleNoteDelete = function (event) {
     // prevents the click listener for the list from being called when the button inside of it is clicked
     event.stopPropagation();
     
@@ -82,19 +82,19 @@ let handleNoteDelete = (event) => {
 };
 
 // sets activeNote and displays it
-let handleNoteView = () => {
+let handleNoteView = function () {
     activeNote = $(this).data();
     renderActiveNote();
 };
 
 // sets the activeNote to an empty object and allows user to enter new note
-let handeNewNoteView = () => {
+let handeNewNoteView = function () {
     activeNote = {};
     renderActiveNote();
 };
 
 // if note's name or text are empty, hide the save button, else show it
-let handleRenderSaveBtn = () => {
+let handleRenderSaveBtn = function () {
     if (!$noteName.val().trim() || !$noteText.val().trim()) {
         $saveBtn.hide();
     } else {
@@ -103,7 +103,7 @@ let handleRenderSaveBtn = () => {
 };
 
 // Render the list of note names
-let renderNoteList = (notes) => {
+let renderNoteList = function (notes) {
     $noteList.empty();
 
     let noteListItems = [];
@@ -123,8 +123,8 @@ let renderNoteList = (notes) => {
 };
 
 // gets notes from the db and renders these to sidebar
-let getAndRenderNotes = () => {
-    return getNotes().then((data) => {
+let getAndRenderNotes = function () {
+    return getNotes().then( function (data) {
         renderNoteList(data);
     });
 };
