@@ -68,7 +68,7 @@ let handleNoteDelete = (event) => {
     event.stopPropagation();
     
     let note = $(this)
-        .parent("list-group-item")
+        .parent(".list-group-item")
         .data();
     
     if (activeNote.id === note.id) {
@@ -127,7 +127,7 @@ let getAndRenderNotes = () => {
     return getNotes().then((data) => {
         renderNoteList(data);
     });
-}
+};
 
 $saveBtn.on("click", handleNoteSave);
 $noteList.on("click", ".list-group-item", handleNoteView);
