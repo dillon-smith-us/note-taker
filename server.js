@@ -42,7 +42,7 @@ app.route("/api/notes")
     // add a new note to the json database
     .post(function (req, res) {
         let jsonFilePath = path.join(__dirname, "/db/db.json");
-        let newNote = req.body
+        let newNote = req.body;
 
         // this allows the test note to be the first note.
         let highestId = 99;
