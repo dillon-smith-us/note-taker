@@ -132,7 +132,7 @@ let getAndRenderNotes = () => {
 $saveBtn.on("click", handleNoteSave);
 $noteList.on("click", ".list-group-item", handleNoteView);
 $newBtn.on("click", handeNewNoteView);
-$noteList.on("click", "delete-note", handleRenderSaveBtn);
+$noteList.on("click", "delete-note", handleNoteDelete);
 $noteName.on("keyup", handleRenderSaveBtn);
 $noteText.on("keyup", handleRenderSaveBtn);
 
