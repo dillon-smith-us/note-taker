@@ -21,6 +21,7 @@
     Click "Get Started" button on the homepage. From here, you will be able to enter a name for your note, and a description for your note. Click on the save icon to push your saved note to a list on the left side of the page. Click the trash icon to delete saved notes. Click on the pencil icon to write a new note. 
 
     ## PREVIEW
+    
     ![Application Preview](./public/assets/gif/note-taker.gif)
     
     ## TESTS
